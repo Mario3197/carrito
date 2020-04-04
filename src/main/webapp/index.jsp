@@ -8,60 +8,68 @@
         <div class=" h-100 d-flex justify-content-center align-items-center">
             <div>
                 <h2>Solicitud de equipo medico</h2>
-                <form>
+                <form action="guardar-info" method="post" name="formulario">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Nombre">
+                        <input type="text" class="form-control" placeholder="Nombre" name="nombre">
                     </div>
                     <div class="input-group mb-3">
-                        <select class="form-control" id="inputGroupSelect01">
-                            <option selected>Selecciona la sucursal</option>
-                            <option value="1">Hospital General</option>
-                            <option value="2">Hospital Juarez</option>
-                            <option value="3">Hospital Infantil</option>
+                        <select class="form-control" name="hospital">
+                            <option>Selecciona una sucursal</option>
+                            <option>Hospital General</option>
+                            <option>Hospital Juarez</option>
+                            <option>Hospital Infantil</option>
                         </select>
                     </div>
+                    <h4>Material</h4>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" id="gel" name="material" value="Gel antibacterial">
+                        <label class="form-check-label" for="gel">
                             Gel antibacterial
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="Tapa bocas" id="tapaBocas" name="material">
+                        <label class="form-check-label" for="tapaBocas">
                             Tapa bocas
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="Guantes" id="guantes" name="material">
+                        <label class="form-check-label" for="guantes">
                             Guantes
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="Batas" id="batas" name="material">
+                        <label class="form-check-label" for="batas">
                             Batas desechables
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="Detergentes" id="detergente" name="material">
+                        <label class="form-check-label" for="detergente">
                             Detergente
                         </label>
                     </div>
+                    <h4>Adicionales especificos</h4>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Adicionales especificos</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" rows="3" name ="adicionales"></textarea>
                     </div>
-                </form>
-                <div class="container">
-                    <div class="row">
-                        <div class="col align-self-end">
-                            <button type="button" class="btn btn-primary">Primary</button>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col align-self-start">
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
+                <form method="get" action="guardar-info">
+                    <div class="row">
+                        <div class="col align-self-end">
+                            <button type="submit" class="btn btn-primary">Descargar excel</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
