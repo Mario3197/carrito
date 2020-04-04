@@ -22,7 +22,6 @@ public class GuardarInformacion extends HttpServlet {
         String[] materiales = request.getParameterValues("material");
         String adicionales = request.getParameter("adicionales");
 
-        System.out.println(adicionales);
         if (nombre.isEmpty()) {
             out.println("<h1>Tu pedido no tiene nombre, por favor ingrésalo</h1>");
         } else {
@@ -59,16 +58,16 @@ public class GuardarInformacion extends HttpServlet {
                 response.setHeader("Content-disposition", "filename=pedido.xls");
 
                 for (int i = 0; i < materiales.length; i++) {
-                    /*if () {
-
+                    if (i == (materiales.length - 1)) {
+                        materialesExcel = materialesExcel.concat(materiales[i]);
+                    } else {
+                        materialesExcel = materialesExcel.concat(materiales[i] + ", ");
                     }
-                    materiales.concat(material + ", ");*/
                 }
                 out.println("Nombre:\t" + pedido.getNombre());
                 out.println("Sucursal:\t" + pedido.getSucursal());
-                out.println("Nombre:\t" + pedido.getNombre());
-                out.println("Nombre:\t" + pedido.getNombre());
-                System.out.println(pedido.getNombre());
+                out.println("Materiales:\t" + materialesExcel);
+                out.println("Adicionales:\t" + pedido.getAdicionales());
             } finally {
                 out.close();
             }
